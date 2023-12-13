@@ -258,7 +258,69 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotatio
     gdImageFilledPolygon(img, points, 10, color);
 }</pre>
 <p><img alt="" height="211" src="/images/usa_flag.png" width="400"/></p>
-<h1>w13</h1><h1>Brython</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+#include &lt;math.h&gt;
+ 
+void draw_japan_flag(gdImagePtr img);
+void draw_red_sun(gdImagePtr img, int x, int y, int size, int color);
+ 
+int main() {
+    int originalWidth = 1200;
+    int originalHeight = (int)(originalWidth * 2.0 / 3.0);
+    gdImagePtr img = gdImageCreateTrueColor(originalWidth, originalHeight);
+    gdImageAlphaBlending(img, 0);
+ 
+    draw_japan_flag(img);
+ 
+    // 新的宽度和高度以适应 "images" 文件夹
+    int newWidth = 600;
+    int newHeight = (int)(newWidth * 2.0 / 3.0);
+ 
+    // 创建新图像并进行缩放
+    gdImagePtr resizedImage = gdImageCreateTrueColor(newWidth, newHeight);
+    gdImageAlphaBlending(resizedImage, 0);
+    gdImageCopyResampled(resizedImage, img, 0, 0, 0, 0, newWidth, newHeight, originalWidth, originalHeight);
+ 
+  FILE *outputFile = fopen("./../images/japan_flag.png", "wb");
+    if (outputFile == NULL) {
+        fprintf(stderr, "Error opening the output file.\n");
+        return 1;
+    }
+    gdImagePng(resizedImage, outputFile);
+    fclose(outputFile);
+    gdImageDestroy(img);
+    gdImageDestroy(resizedImage);
+ 
+    return 0;
+}
+ 
+void draw_japan_flag(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+ 
+    // 创建一个白色背景
+    int white = gdImageColorAllocate(img, 255, 255, 255);
+    gdImageFilledRectangle(img, 0, 0, width - 1, height - 1, white);
+ 
+    // 绘制红色圆圈（太阳）
+    int red = gdImageColorAllocate(img, 255, 0, 0);
+    int center_x = width / 2;
+    int center_y = height / 2;
+    int radius = (int)((width * 2) / 3);
+    draw_red_sun(img, center_x, center_y, radius, red);
+}
+ 
+void draw_red_sun(gdImagePtr img, int x, int y, int size, int color) {
+  // 減小 size 的值,例如將他的值減半
+  size = size / 2;
+    gdImageArc(img, x, y, size, size, 0, 360, color);
+    gdImageFillToBorder(img, x, y, color, color);
+}
+</pre>
+<p><img alt="" height="267" src="/images/japan_flag.png" width="400"/></p><h1>w13</h1>
+<p>這是我第一次接觸計算機程式，一切都很陌生，一開始都看不懂也聽不懂，一直遇到瓶頸，都沒辦法成功，於是就利用課餘時間，看老師上課錄的影片，<span style="text-decoration: underline;">或者請教同學，從不斷的嘗試中找出問題在哪裡，慢慢去修正錯誤</span>。從之前甚麼都不會，到現在會架設網站，畫出國旗，看見自己的成長，真的很開心。也很謝謝我的同學很有耐心的告訴我哪裡有問題。</p>
+<p>我覺得學計算機程式對於現在的電腦大數據時代很有用，現在人手一機，甚麼都跟網路有關係，學會架設網站是一項很有用的技術，把電腦變成更有用的工具，利用電腦來賺錢，而不會被電腦淘汰。</p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
