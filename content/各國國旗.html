@@ -142,9 +142,47 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w12 << <a href='w12.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython<br /><h1>w13</h1>
-<p>這是我第一次接觸計算機程式，一切都很陌生，一開始都看不懂也聽不懂，一直遇到瓶頸，都沒辦法成功，於是就利用課餘時間，看老師上課錄的影片，<span>或者請教同學，從不斷的嘗試中找出問題在哪裡，慢慢去修正錯誤</span>。從之前甚麼都不會，到現在會架設網站，畫出國旗，看見自己的成長，真的很開心。也很謝謝我的同學很有耐心的告訴我哪裡有問題。</p>
-<p>我覺得學計算機程式對於現在的電腦大數據時代很有用，現在人手一機，甚麼都跟網路有關係，學會架設網站是一項很有用的技術，把電腦變成更有用的工具，利用電腦來賺錢，而不會被電腦淘汰。</p><br />w12 << <a href='w12.html'>Previous</a> <a href='Brython.html'>Next</a> >> Brython</div>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='w5.html'>Next</a> >> w5<br /><h1>各國國旗</h1>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;gd.h&gt;
+ 
+int main() {
+    int width = 300;  // 宽度
+    int height = 200; // 高度
+ 
+    gdImagePtr image = gdImageCreateTrueColor(width, height);
+ 
+    if (image == NULL) {
+        printf("Failed to create image.\n");
+        return 1;
+    }
+ 
+    // 确定颜色索引
+    int green = gdImageColorAllocate(image, 0, 128, 0);
+    int white = gdImageColorAllocate(image, 255, 255, 255);
+    int red = gdImageColorAllocate(image, 255, 0, 0);
+ 
+    // 填充颜色
+    gdImageFilledRectangle(image, 0, 0, width / 3, height, green);
+    gdImageFilledRectangle(image, width / 3, 0, (width / 3) * 2, height, white);
+    gdImageFilledRectangle(image, (width / 3) * 2, 0, width, height, red);
+ 
+    FILE *outputFile;
+    outputFile = fopen("./../images/italian_flag.png", "wb");
+ 
+    if (outputFile == NULL) {
+        printf("Failed to open file for writing.\n");
+        return 1;
+    }
+ 
+    gdImagePng(image, outputFile);
+    fclose(outputFile);
+ 
+    gdImageDestroy(image);
+ 
+    return 0;
+}</pre>
+<p><img alt="" height="267" src="./../images/italian_flag.png" width="400"/></p><br />About << <a href='About.html'>Previous</a> <a href='w5.html'>Next</a> >> w5</div>
         
     <!-- footer -->
       <div class="container">
