@@ -205,7 +205,7 @@ int main() {
   
     return 0;
 }</pre>
-<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p><h2>w6</h2><h2>UK</h2>
+<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p><h2>w6</h2><h3>UK</h3>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -344,7 +344,7 @@ void draw_uk_flag(gdImagePtr img) {
     gdImageFilledRectangle(img, center_x + 1.5 * cross_width, 0, center_x - 1.5 * cross_width, height, red);
     gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y - 1.5 * cross_arm_width, red);
 }</pre>
-<p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p><h2>ROC</h2>
+<p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p><h3>ROC</h3>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China
 // 內政部國旗參考資料: https://www.moi.gov.tw/cp.aspx?n=10621
 // cc roc_flag_in_gd.c -lgd -lm to link with gd and math library
@@ -467,8 +467,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
     gdImagePolygon(img, points, 4, color);
     }
 }</pre>
-<p><img alt="" height="267" src="/images/roc_flag_in_gd.png" width="400"/></p>
-<h2>USA</h2>
+<p><img alt="" height="267" src="/images/roc_flag_in_gd.png" width="400"/></p><h2>USA</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
