@@ -142,43 +142,24 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Italian << <a href='Italian.html'>Previous</a> <a href='作業.html'>Next</a> >> 作業<br /><h1>Ukraine</h1>
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='各國國旗.html'>Next</a> >> 各國國旗<br /><h1>C1</h1>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
- 
-#define WIDTH 600
-#define HEIGHT 400
-#define YELLOW 0xFFD100  // Yellow color
-#define BLUE 0x0057A6    // Blue color
- 
-void drawUkraineFlag() {
-    gdImagePtr im;
-    FILE *output;
- 
-    im = gdImageCreateTrueColor(WIDTH, HEIGHT);
-    output = fopen("ukraine_flag.png", "wb");
- 
-    // Allocate yellow and blue colors
-    int yellowIndex = gdImageColorAllocate(im, (YELLOW &gt;&gt; 16) &amp; 0xFF, (YELLOW &gt;&gt; 8) &amp; 0xFF, YELLOW &amp; 0xFF);
-    int blueIndex = gdImageColorAllocate(im, (BLUE &gt;&gt; 16) &amp; 0xFF, (BLUE &gt;&gt; 8) &amp; 0xFF, BLUE &amp; 0xFF);
- 
-    // Draw blue upper half
-    gdImageFilledRectangle(im, 0, 0, WIDTH - 1, HEIGHT / 2 - 1, blueIndex);
- 
-    // Draw yellow lower half
-    gdImageFilledRectangle(im, 0, HEIGHT / 2, WIDTH - 1, HEIGHT - 1, yellowIndex);
- 
-    // Save the image
-    gdImagePng(im, output);
-    fclose(output);
-    gdImageDestroy(im);
-}
- 
-int main() {
-    drawUkraineFlag();
-    return 0;
+
+int main()  
+{
+    // Print Name
+    printf("Name   : 黃耀韋\n"); 
+
+    // Print Date of Birth
+    printf("DOB    : May 29,2005\n"); 
+
+    // Print Mobile Number
+    printf("Mobile : 09-66300055\n"); 
+
+    // Indicate successful execution
+    return(0); 
 }</pre>
-<p><img alt="" height="267" src="./../images/ukraine_flag.png" width="400"/></p><br />Italian << <a href='Italian.html'>Previous</a> <a href='作業.html'>Next</a> >> 作業</div>
+<p><img alt="" height="221" src="./../images/螢幕擷取畫面 2024-01-16 154832.png" width="400"/></p><br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='各國國旗.html'>Next</a> >> 各國國旗</div>
         
     <!-- footer -->
       <div class="container">
