@@ -71,6 +71,7 @@ int main()
     return(0);
 }</pre>
 <p><img alt="" height="241" src="/images/螢幕擷取畫面 2024-01-16 162002.png" width="400"/></p>
+<p>C.4</p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
  
 int main() 
@@ -96,7 +97,35 @@ int main()
  
     return(0);
 }</pre>
-<p><img alt="" height="284" src="/images/螢幕擷取畫面 2024-01-16 162101.png" width="400"/></p><h1>各國國旗</h1>
+<p><img alt="" height="284" src="/images/螢幕擷取畫面 2024-01-16 162101.png" width="400"/></p>
+<h2>C.4</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; 
+
+/* 
+   Variables to store the width and height of a rectangle in inches 
+*/
+int width;          
+int height;         
+
+int area;           /* Variable to store the area of the rectangle */
+int perimeter;      /* Variable to store the perimeter of the rectangle */
+
+int main() {
+    /* Assigning values to height and width */
+    height = 5;
+    width = 10;
+
+    /* Calculating the perimeter of the rectangle */
+    perimeter = 2*(height + width);
+    printf("Perimeter of the rectangle = %d inches\n", perimeter);
+
+    /* Calculating the area of the rectangle */
+    area = height * width;
+    printf("Area of the rectangle = %d square inches\n", area);
+
+    return(0);
+}</pre>
+<p><img alt="" height="81" src="/images/螢幕擷取畫面 2024-01-16 162747.png" width="400"/></p><h1>各國國旗</h1>
 <h2>Laos</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
