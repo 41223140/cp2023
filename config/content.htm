@@ -163,7 +163,25 @@ int main() {
     return 0;
 }</pre>
 <p><img alt="" height="237" src="/images/螢幕擷取畫面 2024-01-16 232229.png" width="400"/></p>
-<div class="line number1 index0 alt2"><code class="csharp preprocessor"></code></div><h1>各國國旗</h1>
+<h2>C9</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+    // Check for C standard version
+    #if __STDC_VERSION__ &gt;=  201710L
+        printf("We are using C22!\n");
+    #elif __STDC_VERSION__ &gt;= 201112L
+        printf("We are using C11!\n");
+    #elif __STDC_VERSION__ &gt;= 199901L
+        printf("We are using C99!\n");
+    #else
+        printf("We are using C89/C90!\n");
+    #endif
+
+    // Indicate successful execution
+    return 0;
+}</pre>
+<div class="line number1 index0 alt2"><code class="csharp preprocessor"><img alt="" height="117" src="/images/螢幕擷取畫面 2024-01-16 233137.png" width="400"/></code></div><h1>各國國旗</h1>
 <h2>Laos</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
